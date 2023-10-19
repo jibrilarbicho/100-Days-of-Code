@@ -1,0 +1,11 @@
+print("123"+"456")
+print(123+456)
+numChar=len("welcome to jimma abba jifar")
+print(type(numChar))
+name=len("Kebede Zeleke")
+#converting number into integer
+numchar=str(name)
+print("Your name has " +numchar +" Characters")
+print(100 +float("100.73"))
+print(str(100)+str(100))
+print("hello"[3])
