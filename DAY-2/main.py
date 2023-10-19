@@ -17,3 +17,10 @@ score=10
 height=176
 wining=True
 print(f"your score is {score},your height is {height}, You are winning is {wining}")
+age=input("Enter you age")
+age_as_int=int(age)
+years_reamaining=90-age_as_int
+days_remaining=years_reamaining*365
+weeks_remaining=years_reamaining*52
+months_remainig=years_reamaining*12
+print(f"you have {days_remaining} days,{weeks_remaining} weeks,{months_remainig} months left")
