@@ -40,7 +40,7 @@ def game():
 
         turns = check_answer(guess, answer, turns)
         if turns == 0:
-            print("You Lost")
+            print("You Lost Good Bye")
             return
 
 
