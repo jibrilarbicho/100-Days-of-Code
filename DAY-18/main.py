@@ -15,8 +15,6 @@ thimy.color("red")
 #     thimy.forward(10)
 #     thimy.pendown()
 
-# screen = Screen()
-# # screen.exitonclick()
 
 colors = [
     "red",
@@ -44,9 +42,22 @@ direction = [0, 90, 180, 270]
 # for shape_side in range(3, 12):
 #     thimy.color(random.choice(colors))
 #     draw_shape(shape_side)
-thimy.pensize(15)
-thimy.speed(1)
-for _ in range(200):
-    thimy.color(random.choice(colors))
-    thimy.forward(30)
-    thimy.setheading(random.choice(direction))
+thimy.pensize(5)
+thimy.speed(15)
+
+
+def drawspirograph(sizeofgap):
+    for _ in range(int(360 / sizeofgap)):
+        thimy.color(random.choice(colors))
+        thimy.circle(100)
+
+        thimy.setheading(thimy.heading() + sizeofgap)
+
+
+drawspirograph(5)
+# for _ in range(200):
+#     thimy.color(random.choice(colors))
+#     thimy.forward(30)
+#     thimy.setheading(random.choice(direction))
+screen = Screen()
+screen.exitonclick()
