@@ -42,7 +42,7 @@ direction = [0, 90, 180, 270]
 # for shape_side in range(3, 12):
 #     thimy.color(random.choice(colors))
 #     draw_shape(shape_side)
-thimy.pensize(5)
+thimy.pensize(1)
 thimy.speed(15)
 
 
