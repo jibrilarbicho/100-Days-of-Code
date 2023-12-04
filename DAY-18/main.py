@@ -1,5 +1,6 @@
 from turtle import Screen, Turtle
 import random
+import turtle
 
 thimy = Turtle()
 # thimy.shape("turtle")
@@ -31,15 +32,21 @@ colors = [
     "gray",
     "cyan",
 ]
+direction = [0, 90, 180, 270]
+
+# def draw_shape(num_sides):
+#     for _ in range(num_sides):
+#         angle = 360 / num_sides
+#         thimy.forward(100)
+#         thimy.right(angle)
 
 
-def draw_shape(num_sides):
-    for _ in range(num_sides):
-        angle = 360 / num_sides
-        thimy.forward(100)
-        thimy.right(angle)
-
-
-for shape_side in range(3, 12):
+# for shape_side in range(3, 12):
+#     thimy.color(random.choice(colors))
+#     draw_shape(shape_side)
+thimy.pensize(15)
+thimy.speed(1)
+for _ in range(200):
     thimy.color(random.choice(colors))
-    draw_shape(shape_side)
+    thimy.forward(30)
+    thimy.setheading(random.choice(direction))
