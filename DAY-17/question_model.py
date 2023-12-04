@@ -4,5 +4,5 @@ class Question:
         self.answer = q_answer
 
 
-new_q = Question("what is the capital City of Ethiopia", "Finfinne")
-print(new_q.text)
+# new_q = Question("what is the capital City of Ethiopia", "Finfinne")
+# print(new_q.text)
