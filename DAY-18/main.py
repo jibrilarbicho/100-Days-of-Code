@@ -1,63 +1,67 @@
-from turtle import Screen, Turtle
-import random
-import turtle
+import colorgram
 
-thimy = Turtle()
-# thimy.shape("turtle")
-thimy.color("red")
-# for _ in range(4):
-#     thimy.forward(100)
-#     thimy.left(90)
+colors = colorgram.extract("hirstPainting.jpg", 30)
+print(colors)
+# from turtle import Screen, Turtle
+# import random
+# import turtle
 
-# for _ in range(15):
-#     thimy.forward(10)
-#     thimy.penup()
-#     thimy.forward(10)
-#     thimy.pendown()
+# thimy = Turtle()
+# # thimy.shape("turtle")
+# thimy.color("red")
+# # for _ in range(4):
+# #     thimy.forward(100)
+# #     thimy.left(90)
 
-
-colors = [
-    "red",
-    "orange",
-    "yellow",
-    "green",
-    "blue",
-    "purple",
-    "pink",
-    "brown",
-    "black",
-    "white",
-    "gray",
-    "cyan",
-]
-direction = [0, 90, 180, 270]
-
-# def draw_shape(num_sides):
-#     for _ in range(num_sides):
-#         angle = 360 / num_sides
-#         thimy.forward(100)
-#         thimy.right(angle)
+# # for _ in range(15):
+# #     thimy.forward(10)
+# #     thimy.penup()
+# #     thimy.forward(10)
+# #     thimy.pendown()
 
 
-# for shape_side in range(3, 12):
-#     thimy.color(random.choice(colors))
-#     draw_shape(shape_side)
-thimy.pensize(1)
-thimy.speed(15)
+# colors = [
+#     "red",
+#     "orange",
+#     "yellow",
+#     "green",
+#     "blue",
+#     "purple",
+#     "pink",
+#     "brown",
+#     "black",
+#     "white",
+#     "gray",
+#     "cyan",
+# ]
+# direction = [0, 90, 180, 270]
+
+# # def draw_shape(num_sides):
+# #     for _ in range(num_sides):
+# #         angle = 360 / num_sides
+# #         thimy.forward(100)
+# #         thimy.right(angle)
 
 
-def drawspirograph(sizeofgap):
-    for _ in range(int(360 / sizeofgap)):
-        thimy.color(random.choice(colors))
-        thimy.circle(100)
+# # for shape_side in range(3, 12):
+# #     thimy.color(random.choice(colors))
+# #     draw_shape(shape_side)
+# thimy.pensize(1)
+# thimy.speed(15)
 
-        thimy.setheading(thimy.heading() + sizeofgap)
+
+# def drawspirograph(sizeofgap):
+#     for _ in range(int(360 / sizeofgap)):
+#         thimy.color(random.choice(colors))
+#         thimy.circle(100)
+
+#         thimy.setheading(thimy.heading() + sizeofgap)
 
 
-drawspirograph(5)
-# for _ in range(200):
-#     thimy.color(random.choice(colors))
-#     thimy.forward(30)
-#     thimy.setheading(random.choice(direction))
-screen = Screen()
-screen.exitonclick()
+# drawspirograph(5)
+# # for _ in range(200):
+# #     thimy.color(random.choice(colors))
+# #     thimy.forward(30)
+# #     thimy.setheading(random.choice(direction))
+# screen = Screen()
+# screen.exitonclick()
