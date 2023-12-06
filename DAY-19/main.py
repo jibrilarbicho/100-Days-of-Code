@@ -36,3 +36,7 @@ screen.onkey(turn_right, "d")
 screen.onkey(clear, "c")
 
 screen.exitonclick()
+
+
+# timy = Turtle()
+# tomy = Turtle()
