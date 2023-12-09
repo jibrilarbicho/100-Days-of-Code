@@ -1,11 +1,13 @@
 from pickle import TRUE
 from turtle import Screen, Turtle
+
+from food import Food
 from snake import Snake
 import time
 import turtle
 
 snake = Snake()
-
+food = Food()
 screnn = Screen()
 screnn.setup(width=600, height=600)
 screnn.bgcolor("black")
@@ -22,6 +24,8 @@ while gameIsON:
     screnn.update()
     time.sleep(0.1)
     snake.move()
+    if snake.head.distance(food) < 15:
+        food.refresh()
 
 
 screnn.exitonclick()
