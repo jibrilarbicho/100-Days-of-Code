@@ -40,4 +40,8 @@ while Gameison:
         and ball.xcor() < -320
     ):
         ball.bouncex()
+    if ball.xcor() > 380:
+        ball.resetPposition()
+    if ball.xcor() < -380:
+        ball.resetPposition()
 scren.exitonclick()

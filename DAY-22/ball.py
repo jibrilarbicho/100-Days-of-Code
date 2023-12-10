@@ -20,3 +20,7 @@ class Ball(Turtle):
 
     def bouncex(self):
         self.xmove *= -1
+
+    def resetPposition(self):
+        self.goto(0, 0)
+        self.bouncex()
