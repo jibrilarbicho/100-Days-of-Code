@@ -26,12 +26,18 @@ scren.onkey(l_paddle.godown, "s")
 Gameison = True
 while Gameison:
     scren.update()
-    time.sleep(0.3)
+    time.sleep(0.2)
     ball.move()
 
     # detect collision
     if ball.ycor() > 280 or ball.ycor() < -280:
-        ball.bounce()
-
-
+        ball.bouncey()
+    # detect collision with right Paddle
+    if (
+        ball.distance(r_paddle) < 50
+        and ball.xcor() > 320
+        or ball.distance(l_paddle) < 50
+        and ball.xcor() < -320
+    ):
+        ball.bouncex()
 scren.exitonclick()
