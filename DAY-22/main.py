@@ -1,6 +1,7 @@
 from turtle import Turtle, Screen
 
 import time
+from scoreBoard import Scoreboard
 
 scren = Screen()
 scren.tracer(0)
@@ -13,6 +14,7 @@ from ball import Ball
 r_paddle = Paddle((350, 0))
 l_paddle = Paddle((-350, 0))
 ball = Ball()
+scoreboard = Scoreboard()
 # paddle = Turtle()
 
 # p
@@ -26,7 +28,7 @@ scren.onkey(l_paddle.godown, "s")
 Gameison = True
 while Gameison:
     scren.update()
-    time.sleep(0.2)
+    time.sleep(ball.move_speed)
     ball.move()
 
     # detect collision
@@ -41,7 +43,9 @@ while Gameison:
     ):
         ball.bouncex()
     if ball.xcor() > 380:
-        ball.resetPposition()
+        ball.resetPosition()
+        scoreboard.r_point()
     if ball.xcor() < -380:
-        ball.resetPposition()
+        ball.resetPosition()
+        scoreboard.l_point()
 scren.exitonclick()
