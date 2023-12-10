@@ -1,5 +1,6 @@
 from turtle import Turtle, Screen
 
+import time
 
 scren = Screen()
 scren.tracer(0)
@@ -12,19 +13,25 @@ from ball import Ball
 r_paddle = Paddle((350, 0))
 l_paddle = Paddle((-350, 0))
 ball = Ball()
-ball.move
 # paddle = Turtle()
 
 # p
 # paddle.goto(350, 0)
 scren.listen()
-
+scren.onkey(r_paddle.goup, "Up")
+scren.onkey(r_paddle.godown, "Down")
+scren.onkey(l_paddle.goup, "w")
+scren.onkey(l_paddle.godown, "s")
 
 Gameison = True
 while Gameison:
     scren.update()
-    scren.onkey(r_paddle.goup, "Up")
-    scren.onkey(r_paddle.godown, "Down")
-    scren.onkey(l_paddle.goup, "w")
-    scren.onkey(l_paddle.godown, "s")
+    time.sleep(0.3)
+    ball.move()
+
+    # detect collision
+    if ball.ycor() > 280 or ball.ycor() < -280:
+        ball.bounce()
+
+
 scren.exitonclick()
