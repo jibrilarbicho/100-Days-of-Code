@@ -14,7 +14,8 @@ class Scoreboard(Turtle):
         self.goto(0, 270)
         self.updateScoreboard()
         self.hideturtle()
-        self.highScore = 0
+        with open("/home/jibril/Documents/Python/DAY-24/data.txt") as data:
+            self.highScore = int(data.read())
 
     def updateScoreboard(self):
         self.clear()
@@ -31,6 +32,8 @@ class Scoreboard(Turtle):
     def reset(self):
         if self.score > self.highScore:
             self.highScore = self.score
+        with open("/home/jibril/Documents/Python/DAY-24/data.txt", mode="w") as data:
+            data.write(f"{self.highScore}")
             self.score = 0
 
     # def GameOver(self):
