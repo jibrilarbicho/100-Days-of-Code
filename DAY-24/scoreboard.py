@@ -12,15 +12,15 @@ class Scoreboard(Turtle):
         self.color("white")  # this should come before self.write
         self.penup()
         self.goto(0, 270)
+        with open("/home/jibril/Documents/Python/DAY-24/data.txt") as data:
+            self.HighScore = int(data.read())
         self.updateScoreboard()
         self.hideturtle()
-        with open("/home/jibril/Documents/Python/DAY-24/data.txt") as data:
-            self.highScore = int(data.read())
 
     def updateScoreboard(self):
         self.clear()
         self.write(
-            f"Score:{self.score}  HighScore:{self.highScore}",
+            f"Score:{self.score}  HighScore:{self.HighScore}",
             align=ALIGNMENT,
             font=FONT,
         )
@@ -30,7 +30,7 @@ class Scoreboard(Turtle):
         self.updateScoreboard()
 
     def reset(self):
-        if self.score > self.highScore:
+        if self.score > self.HighScore:
             self.highScore = self.score
         with open("/home/jibril/Documents/Python/DAY-24/data.txt", mode="w") as data:
             data.write(f"{self.highScore}")
