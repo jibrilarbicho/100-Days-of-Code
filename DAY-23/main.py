@@ -21,4 +21,9 @@ while game_is_on:
     for car in car_manager.allCars:
         if car.distance(player) < 20:
             game_is_on = False
+        if player.is_at_finish_line():
+            player.GotoStart()
+            car_manager.levelUp()
+
+    # Detecting Succesfful collision
 screen.exitonclick()
