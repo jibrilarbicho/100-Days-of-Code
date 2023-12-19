@@ -5,6 +5,7 @@ from tkinter import messagebox
 from tkinter.constants import END
 import tkinter as tk
 import pyperclip
+import json
 
 
 def password_generator():
@@ -20,7 +21,7 @@ def save():
     website_name = website_entry.get()
     email = email_entry.get()
     password = password_entry.get()
-
+    new_data = {website_name: {"email": email, "password": password}}
     if len(website_name) == 0 or len(email) == 0 or len(password) == 0:
         messagebox.showinfo(
             title="Error", message="Please make sure you haven't left any field empty."
@@ -33,12 +34,19 @@ def save():
 
         if is_ok:
             with open(
-                "/home/jibril/Documents/Python/DAY-29/passwords.txt", "a"
+                "/home/jibril/Documents/Python/DAY-29/passwords.json", "r"
             ) as file_data:
-                file_data.write(f"{website_name} | {email} | {password}\n")
+                # file_data.write(f"{website_name} | {email} | {password}\n")
+                # json.dump(new_data, file_data, indent=4)
+                data = json.load(file_data)
+                data.update(new_data)
+            with open(
+                "/home/jibril/Documents/Python/DAY-29/passwords.json", "w"
+            ) as file_data:
+                json.dump(data, file_data, indent=4)
 
-            website_entry.delete(0, END)
-            password_entry.delete(0, END)
+                website_entry.delete(0, END)
+                password_entry.delete(0, END)
 
 
 EMAIL_FIELD = "email@example.com"
