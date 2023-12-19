@@ -23,7 +23,7 @@ def button_clicked():
 
 
 button = Button(text="Click ME", command=button_clicked)
-mylabel.pack()
+mylabel.place(x=100, y=100)
 button.pack()
 input.pack()
 window.mainloop()
