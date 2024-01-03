@@ -1,4 +1,3 @@
-from cgi import print_arguments
 import requests
 from twilio.rest import Client
 import os
@@ -8,13 +7,13 @@ COMPANY_NAME = "Tesla Inc"
 
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
-STOCK_API_KEY = "9XI6UFJPCKTDNC3V"
+STOCK_API_KEY = os.environ.get("NEWS_API")  # i was exported it as NEWS_API
 stock_params = {
     "function": "TIME_SERIES_DAILY",
     "symbol": STOCK_NAME,
     "apikey": STOCK_API_KEY,
 }
-NEWS_API = "5e48832105ba49a5ade3843776a785e7"
+NEWS_API = os.environ.get("STOCK_API_KEY")
 response = requests.get(STOCK_ENDPOINT, params=stock_params)
 data = response.json()["Time Series (Daily)"]
 datalist = [value for (key, value) in data.items()]
