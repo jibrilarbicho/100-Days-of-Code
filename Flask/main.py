@@ -5,7 +5,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return (
+        '<h1 style="text-align:center">Hello, World!</h1>'
+        '<h1 style="text-align:center color:red">Hello, jimma!</h1>'
+    )
 
 
 @app.route("/bye")
@@ -19,7 +22,7 @@ def greet(name):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
 
 # def divide(n1, n2):
 # #     return n1 / n2
